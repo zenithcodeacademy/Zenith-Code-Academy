@@ -1,1 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Zenith Code Academy</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #10245c;
+            background: #f5f9ff;
+            line-height: 1.6;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            width: 100%;
+            background: #061b4f;
+            padding: 15px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-area img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .brand {
+            color: white;
+        }
+
+        .brand h2 {
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        .brand p {
+            font-size: 11px;
+            color: #d9e5ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffc928;
+        }
+
+        .join-btn {
+            background: #ffc928;
+            color: #061b4f;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 650px;
+            padding: 80px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+
+            background:
+                radial-gradient(circle at 80% 50%, #123f91, transparent 35%),
+                linear-gradient(135deg, #031643, #062c78);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero-logo {
+            width: 130px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 75px);
+            line-height: 1.05;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #ffc928;
+        }
+
+        .hero h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #dce7ff;
+            margin-bottom: 30px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background: #ffc928;
+            color: #061b4f;
+            padding: 15px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255,201,40,0.3);
+        }
+
+        .hero-image {
+            width: 42%;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .code-box {
+            background: #06143c;
+            border: 2px solid #238cff;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 0 40px rgba(35,140,255,0.3);
+            text-align: left;
+        }
+
+        .code-box .dots {
+            color: #ffc928;
+            margin-bottom: 20px;
+        }
+
+        .code-box code {
+            color: #a9d8ff;
+            font-size: 16px;
+        }
+
+        .features {
+            display: flex;
+            gap: 35px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #ffc928;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: #ffc928;
+        }
+
+        /* ================= SECTION ================= */
+
+        section {
+            padding: 80px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            color: #10245c;
+        }
+
+        .section-title p {
+            color: #596b91;
+        }
+
+        /* ================= COURSES ================= */
+
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .course-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(20,70,140,0.1);
+            border: 1px solid #dbe8ff;
+            transition: 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(20,70,140,0.18);
+        }
+
+        .course-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #e8f3ff;
+            display: grid;
+            place-items: center;
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .course-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .course-card p {
+            color: #66728b;
+            margin-bottom: 20px;
+        }
+
+        .course-info {
+            margin-bottom: 20px;
+            color: #30456e;
+        }
+
+        .learn-btn {
+            display: inline-block;
+            background: #071d55;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .learn-btn:hover {
+            background: #ffc928;
+            color: #071d55;
+        }
+
+        /* ================= WHY US ================= */
+
+        .why {
+            background: #061b4f;
+            color: white;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            text-align: center;
+        }
+
+        .why-card {
+            padding: 25px;
+        }
+
+        .why-card .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .why-card h3 {
+            color: #ffc928;
+            margin-bottom: 10px;
+        }
+
+        .why-card p {
+            color: #dce6ff;
+        }
+
+        /* ================= RESOURCES ================= */
+
+        .resources {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .resource-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #ffc928;
+            box-shadow: 0 8px 25px rgba(20,70,140,0.1);
+        }
+
+        .resource-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .resource-card a {
+            color: #1266d6;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background: #eef5ff;
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .contact-box h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            color: #596b91;
+            margin-bottom: 25px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #03143c;
+            color: white;
+            padding: 50px 7% 25px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-brand {
+            max-width: 350px;
+        }
+
+        .footer-brand img {
+            width: 75px;
+            margin-bottom: 10px;
+        }
+
+        footer h3 {
+            color: #ffc928;
+            margin-bottom: 12px;
+        }
+
+        footer a {
+            color: #dce7ff;
+            text-decoration: none;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #294474;
+            margin-top: 35px;
+            padding-top: 20px;
+            color: #9baed1;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 60px;
+            }
+
+            .hero-image {
+                width: 90%;
+            }
+
+            .features {
+                justify-content: center;
+            }
+
+            .courses {
+                grid-template-columns: 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .resources {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            nav {
+                padding: 10px 5%;
+            }
+
+            .brand h2 {
+                font-size: 14px;
+            }
+
+            .brand p {
+                font-size: 9px;
+            }
+
+            .logo-area img {
+                width: 45px;
+                height: 45px;
+            }
+
+            .join-btn {
+                padding: 9px 13px;
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 55px 5%;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h3 {
+                font-size: 22px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo-area">
+
+        <img src="logo.png" alt="Zenith Code Academy Logo">
+
+        <div class="brand">
+            <h2>ZENITH CODE ACADEMY</h2>
+            <p>IT & PROGRAMMING EDUCATION</p>
+        </div>
+
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a href="#contact" class="join-btn">Join Us</a>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <img src="logo.png"
+             class="hero-logo"
+             alt="Zenith Code Academy">
+
+        <h1>
+            ZENITH CODE<br>
+            <span>ACADEMY</span>
+        </h1>
+
+        <h3>Learn. Code. Create.</h3>
+
+        <p>
+            Build your coding skills, one step at a time.
+        </p>
+
+        <a href="#courses" class="hero-btn">
+            Explore Courses →
+        </a>
+
+        <div class="features">
+
+            <div class="feature">
+                <div class="feature-icon">✓</div>
+                <span>Beginner Friendly</span>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">⌨</div>
+                <span>Practical Learning</span>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">★</div>
+                <span>Step-by-Step Approach</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-image">
+
+        <div class="code-box">
+
+            <div class="dots">● ● ●</div>
+
+            <code>
+                public class HelloWorld {<br><br>
+
+                &nbsp;&nbsp;public static void main(String[] args) {<br><br>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Hello, World!");<br><br>
+
+                &nbsp;&nbsp;}<br>
+
+                }
+            </code>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= COURSES ================= -->
+
+<section id="courses">
+
+    <div class="section-title">
+
+        <h2>Our Courses</h2>
+
+        <p>
+            Choose your path and start your coding journey today.
+        </p>
+
+    </div>
+
+
+    <div class="courses">
+
+        <!-- JAVA -->
+
+        <div class="course-card">
+
+            <div class="course-icon">☕</div>
+
+            <h3>Java Programming</h3>
+
+            <p>
+                Learn Java from the basics to intermediate level.
+            </p>
+
+            <div class="course-info">
+                🎓 Beginner – Intermediate<br>
+                ⏱ Duration: 72 Hours
+            </div>
+
+            <a href="#contact" class="learn-btn">
+                Learn More →
+            </a>
+
+        </div>
+
+
+        <!-- PYTHON -->
+
+        <div class="course-card">
+
+            <div class="course-icon">🐍</div>
+
+            <h3>Python Programming</h3>
+
+            <p>
+                Build modern applications with Python programming.
+            </p>
+
+            <div class="course-info">
+                🎓 Beginner – Intermediate<br>
+                ⏱ Duration: 72 Hours
+            </div>
+
+            <a href="#contact" class="learn-btn">
+                Learn More →
+            </a>
+
+        </div>
+
+
+        <!-- COMPUTER SCIENCE -->
+
+        <div class="course-card">
+
+            <div class="course-icon">💻</div>
+
+            <h3>Computer Science</h3>
+
+            <p>
+                Understand the core concepts of Computer Science.
+            </p>
+
+            <div class="course-info">
+                🎓 Beginner – Intermediate<br>
+                ⏱ Duration: 72 Hours
+            </div>
+
+            <a href="#contact" class="learn-btn">
+                Learn More →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WHY ZENITH ================= -->
+
+<section class="why" id="about">
+
+    <div class="section-title">
+
+        <h2 style="color:white;">Why Zenith?</h2>
+
+        <p style="color:#dce7ff;">
+            Learn with a clear and practical approach.
+        </p>
+
+    </div>
+
+
+    <div class="why-grid">
+
+        <div class="why-card">
+
+            <div class="icon">🎓</div>
+
+            <h3>Quality Education</h3>
+
+            <p>
+                Build a strong foundation for your coding journey.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="icon">💡</div>
+
+            <h3>Practical Learning</h3>
+
+            <p>
+                Learn concepts and apply them through practice.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="icon">🚀</div>
+
+            <h3>Step-by-Step</h3>
+
+            <p>
+                Learn programming in a simple and structured way.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="icon">🤝</div>
+
+            <h3>Community</h3>
+
+            <p>
+                Learn together and grow together.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= RESOURCES ================= -->
+
+<section id="resources">
+
+    <div class="section-title">
+
+        <h2>Learning Resources</h2>
+
+        <p>
+            Free programming knowledge from Zenith Code Academy.
+        </p>
+
+    </div>
+
+
+    <div class="resources">
+
+        <div class="resource-card">
+
+            <h3>🧠 Programming Thinking</h3>
+
+            <p>
+                Learn how programmers think and solve problems.
+            </p>
+
+            <a href="#">
+                Explore →
+            </a>
+
+        </div>
+
+
+        <div class="resource-card">
+
+            <h3>💻 Programming Insight</h3>
+
+            <p>
+                Discover interesting programming concepts and facts.
+            </p>
+
+            <a href="#">
+                Explore →
+            </a>
+
+        </div>
+
+
+        <div class="resource-card">
+
+            <h3>⚡ Code With Logic</h3>
+
+            <p>
+                Turn programming logic into real code.
+            </p>
+
+            <a href="#">
+                Explore →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+    <div class="contact-box">
+
+        <h2>Start Your Coding Journey</h2>
+
+        <p>
+            Ready to learn, code and create?
+            Get in touch with Zenith Code Academy.
+        </p>
+
+        <a href="mailto:zenithcodeacademy@gmail.com"
+           class="hero-btn">
+            Contact Us
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+
+            <img src="logo.png"
+                 alt="Zenith Code Academy">
+
+            <h3>ZENITH CODE ACADEMY</h3>
+
+            <p>
+                IT & Programming Education
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <p><a href="#home">Home</a></p>
+            <p><a href="#about">About</a></p>
+            <p><a href="#courses">Courses</a></p>
+            <p><a href="#resources">Resources</a></p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Contact</h3>
+
+            <p>
+                📧 zenithcodeacademy@gmail.com
+            </p>
+
+            <p>
+                📍 Myanmar
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Zenith Code Academy. All Rights Reserved.
+
+    </div>
+
+</footer>
+
+</body>
+</html>
