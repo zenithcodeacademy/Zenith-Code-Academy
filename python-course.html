@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Python Programming Course | Zenith Code Academy</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #10245c;
+            background: #f5f9ff;
+            line-height: 1.6;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            width: 100%;
+            background: #061b4f;
+            padding: 15px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-area img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .brand {
+            color: white;
+        }
+
+        .brand h2 {
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        .brand p {
+            font-size: 11px;
+            color: #d9e5ff;
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            color: #ffc928;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .course-hero {
+            padding: 90px 7%;
+            background:
+                radial-gradient(circle at 80% 50%, #123f91, transparent 35%),
+                linear-gradient(135deg, #031643, #062c78);
+            color: white;
+            text-align: center;
+        }
+
+        .course-icon {
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            border-radius: 50%;
+            background: #e8f3ff;
+            display: grid;
+            place-items: center;
+            font-size: 55px;
+            margin-bottom: 25px;
+        }
+
+        .course-hero h1 {
+            font-size: clamp(40px, 6vw, 65px);
+            margin-bottom: 15px;
+        }
+
+        .course-hero h1 span {
+            color: #ffc928;
+        }
+
+        .course-hero p {
+            max-width: 750px;
+            margin: auto;
+            color: #dce7ff;
+            font-size: 18px;
+        }
+
+
+        /* ================= COURSE INFO ================= */
+
+        .course-info-section {
+            padding: 60px 7%;
+            background: white;
+        }
+
+        .course-info {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .info-card {
+            padding: 25px;
+            text-align: center;
+            border-radius: 12px;
+            background: #f5f9ff;
+            border: 1px solid #dbe8ff;
+        }
+
+        .info-card h3 {
+            color: #10245c;
+            margin-bottom: 8px;
+        }
+
+        .info-card p {
+            color: #596b91;
+        }
+
+
+        /* ================= CONTENT ================= */
+
+        section {
+            padding: 80px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            color: #10245c;
+        }
+
+        .section-title p {
+            color: #596b91;
+        }
+
+
+        /* ================= OVERVIEW ================= */
+
+        .overview {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .overview p {
+            color: #596b91;
+            font-size: 18px;
+        }
+
+
+        /* ================= LEARNING OUTCOMES ================= */
+
+        .outcomes {
+            background: #061b4f;
+            color: white;
+        }
+
+        .outcome-grid {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .outcome-card {
+            padding: 25px;
+            border: 1px solid #294474;
+            border-radius: 12px;
+            background: #08235f;
+        }
+
+        .outcome-card h3 {
+            color: #ffc928;
+            margin-bottom: 8px;
+        }
+
+        .outcome-card p {
+            color: #dce7ff;
+        }
+
+
+        /* ================= SYLLABUS ================= */
+
+        .table-container {
+            max-width: 1200px;
+            margin: auto;
+            overflow-x: auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(20,70,140,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 900px;
+        }
+
+        th {
+            background: #071d55;
+            color: white;
+            padding: 18px;
+            text-align: left;
+        }
+
+        td {
+            padding: 18px;
+            border-bottom: 1px solid #dbe8ff;
+            vertical-align: top;
+        }
+
+        tr:hover {
+            background: #f5f9ff;
+        }
+
+        td:first-child {
+            font-weight: bold;
+            color: #1266d6;
+        }
+
+
+        /* ================= FINAL PROJECT ================= */
+
+        .final-project {
+            background: #eef5ff;
+            text-align: center;
+        }
+
+        .project-box {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 45px;
+            border-radius: 18px;
+            border: 1px solid #dbe8ff;
+            box-shadow: 0 10px 30px rgba(20,70,140,0.1);
+        }
+
+        .project-box h2 {
+            color: #10245c;
+            margin-bottom: 15px;
+        }
+
+        .project-box p {
+            color: #596b91;
+            margin-bottom: 25px;
+        }
+
+
+        /* ================= REGISTER ================= */
+
+        .register {
+            text-align: center;
+            background:
+                linear-gradient(135deg, #031643, #062c78);
+            color: white;
+        }
+
+        .register h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .register p {
+            color: #dce7ff;
+            margin-bottom: 30px;
+        }
+
+        .register-btn {
+            display: inline-block;
+            background: #ffc928;
+            color: #061b4f;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .register-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255,201,40,0.3);
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #03143c;
+            color: white;
+            text-align: center;
+            padding: 30px 7%;
+        }
+
+        footer p {
+            color: #9baed1;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 800px) {
+
+            .course-info {
+                grid-template-columns: 1fr;
+            }
+
+            .outcome-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .course-hero {
+                padding: 70px 5%;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .register h2 {
+                font-size: 32px;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            nav {
+                padding: 10px 5%;
+            }
+
+            .brand h2 {
+                font-size: 14px;
+            }
+
+            .brand p {
+                font-size: 9px;
+            }
+
+            .logo-area img {
+                width: 45px;
+                height: 45px;
+            }
+
+            .back-btn {
+                font-size: 13px;
+            }
+
+            .course-hero h1 {
+                font-size: 40px;
+            }
+
+            .course-hero p {
+                font-size: 16px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo-area">
+
+        <img src="logo.png" alt="Zenith Code Academy Logo">
+
+        <div class="brand">
+
+            <h2>ZENITH CODE ACADEMY</h2>
+
+            <p>IT & PROGRAMMING EDUCATION</p>
+
+        </div>
+
+    </div>
+
+    <a href="index.html" class="back-btn">
+        ← Back to Home
+    </a>
+
+</nav>
+
+
+<!-- ================= COURSE HERO ================= -->
+
+<section class="course-hero">
+
+    <div class="course-icon">
+        🐍
+    </div>
+
+    <h1>
+        Python <span>Programming</span>
+    </h1>
+
+    <p>
+        Learn Python from the fundamentals to intermediate level
+        through structured lessons, hands-on practice,
+        problem solving, Object-Oriented Programming, and a final project.
+    </p>
+
+</section>
+
+
+<!-- ================= COURSE INFO ================= -->
+
+<section class="course-info-section">
+
+    <div class="course-info">
+
+        <div class="info-card">
+
+            <h3>🎓 Level</h3>
+
+            <p>
+                Beginner – Intermediate
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>⏱ Duration</h3>
+
+            <p>
+                3 Months / 72 Hours
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>💻 Format</h3>
+
+            <p>
+                Online Class
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= COURSE OVERVIEW ================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>Course Overview</h2>
+
+        <p>
+            Build a strong foundation and develop practical Java skills.
+        </p>
+
+    </div>
+
+
+    <div class="overview">
+
+        <p>
+            This course takes you from Python fundamentals to
+            intermediate programming concepts through a structured
+            12-week learning path. You will learn programming logic,
+            data types, control structures, data structures, functions,
+            file handling, exception handling, Object-Oriented Programming,
+            modules, packages, and practical application development.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LEARNING OUTCOMES ================= -->
+
+<section class="outcomes">
+
+    <div class="section-title">
+
+        <h2 style="color:white;">
+            What You'll Learn
+        </h2>
+
+        <p style="color:#dce7ff;">
+            Skills you will develop throughout the course.
+        </p>
+
+    </div>
+
+
+    <div class="outcome-grid">
+
+        <div class="outcome-card">
+
+            <h3>💡 Programming Fundamentals</h3>
+
+            <p>
+                Understand Python syntax, variables, data types,
+                operators, input/output and control structures.
+            </p>
+
+        </div>
+
+
+        <div class="outcome-card">
+
+            <h3>🔄 Problem Solving</h3>
+
+            <p>
+                Develop logical thinking and solve programming
+                problems using structured Python approaches.
+            </p>
+
+        </div>
+
+
+        <div class="outcome-card">
+
+            <h3>🗂 Data Structures</h3>
+
+            <p>
+                Work with strings, lists, tuples, sets and
+                dictionaries to organize and manipulate data.
+            </p>
+
+        </div>
+
+
+        <div class="outcome-card">
+
+            <h3>🧩 Functions & Modules</h3>
+
+            <p>
+                Create reusable functions and organize Python
+                programs using modules, packages and libraries.
+            </p>
+
+        </div>
+
+
+        <div class="outcome-card">
+
+            <h3>📁 File & Error Handling</h3>
+
+            <p>
+                Read and write files, handle exceptions and
+                debug common Python programming errors.
+            </p>
+
+        </div>
+
+
+        <div class="outcome-card">
+
+            <h3>🧱 Object-Oriented Programming</h3>
+
+            <p>
+                Learn classes, objects, encapsulation, inheritance
+                and polymorphism for practical Python applications.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SYLLABUS ================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>12-Week Course Outline</h2>
+
+        <p>
+            A structured journey from Python fundamentals
+            to a practical Python application.
+        </p>
+
+    </div>
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Week</th>
+
+                    <th>Theory & Concepts</th>
+
+                    <th>Details</th>
+
+                    <th>Hands-on Labs / Learning Outcomes</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+
+                    <td>1</td>
+
+                    <td>Getting Started</td>
+
+                    <td>
+                        Introduction to Python, Python installation, PyCharm, syntax, indentation, variables, comments, first program
+                    </td>
+
+                    <td>
+                        First Python Program & Personal Information Program
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>2</td>
+
+                    <td>Data & Input/Output</td>
+
+                    <td>
+                        Data types, numbers, strings, Boolean values, input/output, type casting, basic string operations
+                    </td>
+
+                    <td>
+                        Simple Calculator & User Input Program
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>3</td>
+
+                    <td>Operators & Expressions</td>
+
+                    <td>
+                        Arithmetic, comparison, logical, assignment, membership and identity operators, operator precedence
+                    </td>
+
+                    <td>
+                        Basic Calculation & Comparison Programs
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>4</td>
+
+                    <td>Conditional Statements</td>
+
+                    <td>
+                        if, if-else, if-elif-else, nested conditions, conditional expressions
+                    </td>
+
+                    <td>
+                        Grade Checker & Eligibility Checker
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>5</td>
+
+                    <td>Loops & Iteration</td>
+
+                    <td>
+                        for, while, range(), nested loops, break and continue
+                    </td>
+
+                    <td>
+                        Number Patterns & Number Guessing Game
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>6</td>
+
+                    <td>Strings & Lists</td>
+
+                    <td>
+                        String indexing, slicing, string methods, list operations and nested lists
+                    </td>
+
+                    <td>
+                        Text Analyzer & Shopping List Program
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>7</td>
+
+                    <td>Tuples, Sets & Dictionaries</td>
+
+                    <td>
+                        Tuples, sets, dictionaries, data structure operations and common methods
+                    </td>
+
+                    <td>
+                        Student Record / Contact Book
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>8</td>
+
+                    <td>Functions</td>
+
+                    <td>
+                        Defining functions, parameters, arguments, return values, default and keyword arguments, scope, built-in and lambda functions
+                    </td>
+
+                    <td>
+                        Modular Calculator & Utility Functions
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>9</td>
+
+                    <td>File & Exception Handling</td>
+
+                    <td>
+                        Reading and writing files, file modes, with statement, exceptions, try-except, else, finally, debugging
+                    </td>
+
+                    <td>
+                        File-based Student Record System
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>10</td>
+
+                    <td>OOP Basics</td>
+
+                    <td>
+                        Introduction to OOP, classes, objects, attributes, methods, __init__() constructor and self
+                    </td>
+
+                    <td>
+                        Student Management Class
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>11</td>
+
+                    <td>OOP & Modules</td>
+
+                    <td>
+                        Encapsulation, inheritance, polymorphism, method overriding, modules, packages, import, standard library and pip
+                    </td>
+
+                    <td>
+                        OOP-based Management System
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>12</td>
+
+                    <td>Python Project</td>
+
+                    <td>
+                        Project planning, problem analysis, program design, testing, debugging and final application development
+                    </td>
+
+                    <td>
+                        Build & Present a Practical Python Application
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FINAL PROJECT ================= -->
+
+<section class="final-project">
+
+    <div class="project-box">
+
+        <h2>
+            🚀 Final Project
+        </h2>
+
+        <p>
+            Apply your Python skills by building a
+            practical application using programming logic,
+            functions, data structures, file handling and OOP.
+        </p>
+
+        <h3>
+            Python + OOP + Practical Application
+        </h3>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REGISTER ================= -->
+
+<section class="register">
+
+    <h2>
+        Ready to Start Learning?
+    </h2>
+
+    <p>
+        Build your Python programming skills
+        step by step with Zenith Code Academy.
+    </p>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe7jbBH1vQi0H-W7VnffjkoQ7ar3fEoT1bA4t3VpcXimKkBRw/viewform" 
+        target="_blank"
+       class="register-btn">
+
+        Register for Python Course →
+
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 Zenith Code Academy. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
