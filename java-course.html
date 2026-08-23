@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Java Programming Course | Zenith Code Academy</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #10245c;
+            background: #f5f9ff;
+            line-height: 1.6;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            width: 100%;
+            background: #061b4f;
+            padding: 15px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-area img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .brand {
+            color: white;
+        }
+
+        .brand h2 {
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        .brand p {
+            font-size: 11px;
+            color: #d9e5ff;
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            color: #ffc928;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .course-hero {
+            padding: 90px 7%;
+            background:
+                radial-gradient(circle at 80% 50%, #123f91, transparent 35%),
+                linear-gradient(135deg, #031643, #062c78);
+            color: white;
+            text-align: center;
+        }
+
+        .course-icon {
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            border-radius: 50%;
+            background: #e8f3ff;
+            display: grid;
+            place-items: center;
+            font-size: 55px;
+            margin-bottom: 25px;
+        }
+
+        .course-hero h1 {
+            font-size: clamp(40px, 6vw, 65px);
+            margin-bottom: 15px;
+        }
+
+        .course-hero h1 span {
+            color: #ffc928;
+        }
+
+        .course-hero p {
+            max-width: 750px;
+            margin: auto;
+            color: #dce7ff;
+            font-size: 18px;
+        }
+
+
+        /* ================= COURSE INFO ================= */
+
+        .course-info-section {
+            padding: 60px 7%;
+            background: white;
+        }
+
+        .course-info {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .info-card {
+            padding: 25px;
+            text-align: center;
+            border-radius: 12px;
+            background: #f5f9ff;
+            border: 1px solid #dbe8ff;
+        }
+
+        .info-card h3 {
+            color: #10245c;
+            margin-bottom: 8px;
+        }
+
+        .info-card p {
+            color: #596b91;
+        }
+
+
+        /* ================= CONTENT ================= */
+
+        section {
+            padding: 80px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            color: #10245c;
+        }
+
+        .section-title p {
+            color: #596b91;
+        }
+
+
+        /* ================= OVERVIEW ================= */
+
+        .overview {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .overview p {
+            color: #596b91;
+            font-size: 18px;
+        }
+
+
+        /* ================= LEARNING OUTCOMES ================= */
+
+        .outcomes {
+            background: #061b4f;
+            color: white;
+        }
+
+        .outcome-grid {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .outcome-card {
+            padding: 25px;
+            border: 1px solid #294474;
+            border-radius: 12px;
+            background: #08235f;
+        }
+
+        .outcome-card h3 {
+            color: #ffc928;
+            margin-bottom: 8px;
+        }
+
+        .outcome-card p {
+            color: #dce7ff;
+        }
+
+
+        /* ================= SYLLABUS ================= */
+
+        .table-container {
+            max-width: 1200px;
+            margin: auto;
+            overflow-x: auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(20,70,140,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 900px;
+        }
+
+        th {
+            background: #071d55;
+            color: white;
+            padding: 18px;
+            text-align: left;
+        }
+
+        td {
+            padding: 18px;
+            border-bottom: 1px solid #dbe8ff;
+            vertical-align: top;
+        }
+
+        tr:hover {
+            background: #f5f9ff;
+        }
+
+        td:first-child {
+            font-weight: bold;
+            color: #1266d6;
+        }
+
+
+        /* ================= FINAL PROJECT ================= */
+
+        .final-project {
+            background: #eef5ff;
+            text-align: center;
+        }
+
+        .project-box {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 45px;
+            border-radius: 18px;
+            border: 1px solid #dbe8ff;
+            box-shadow: 0 10px 30px rgba(20,70,140,0.1);
+        }
+
+        .project-box h2 {
+            color: #10245c;
+            margin-bottom: 15px;
+        }
+
+        .project-box p {
+            color: #596b91;
+            margin-bottom: 25px;
+        }
+
+
+        /* ================= REGISTER ================= */
+
+        .register {
+            text-align: center;
+            background:
+                linear-gradient(135deg, #031643, #062c78);
+            color: white;
+        }
+
+        .register h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .register p {
+            color: #dce7ff;
+            margin-bottom: 30px;
+        }
+
+        .register-btn {
+            display: inline-block;
+            background: #ffc928;
+            color: #061b4f;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .register-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255,201,40,0.3);
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #03143c;
+            color: white;
+            text-align: center;
+            padding: 30px 7%;
+        }
+
+        footer p {
+            color: #9baed1;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 800px) {
+
+            .course-info {
+                grid-template-columns: 1fr;
+            }
+
+            .outcome-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .course-hero {
+                padding: 70px 5%;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .register h2 {
+                font-size: 32px;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            nav {
+                padding: 10px 5%;
+            }
+
+            .brand h2 {
+                font-size: 14px;
+            }
+
+            .brand p {
+                font-size: 9px;
+            }
+
+            .logo-area img {
+                width: 45px;
+                height: 45px;
+            }
+
+            .back-btn {
+                font-size: 13px;
+            }
+
+            .course-hero h1 {
+                font-size: 40px;
+            }
+
+            .course-hero p {
+                font-size: 16px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo-area">
+
+        <img src="logo.png" alt="Zenith Code Academy Logo">
+
+        <div class="brand">
+
+            <h2>ZENITH CODE ACADEMY</h2>
+
+            <p>IT & PROGRAMMING EDUCATION</p>
+
+        </div>
+
+    </div>
+
+    <a href="index.html" class="back-btn">
+        ← Back to Home
+    </a>
+
+</nav>
+
+
+<!-- ================= COURSE HERO ================= -->
+
+<section class="course-hero">
+
+    <div class="course-icon">
+        ☕
+    </div>
+
+    <h1>
+        Java <span>Programming</span>
+    </h1>
+
+    <p>
+        Learn Java from the fundamentals to intermediate level
+        through structured lessons, hands-on practice,
+        GUI development, database connectivity, and a final project.
+    </p>
+
+</section>
+
+
+<!-- ================= COURSE INFO ================= -->
+
+<section class="course-info-section">
+
+    <div class="course-info">
+
+        <div class="info-card">
+
+            <h3>🎓 Level</h3>
+
+            <p>
+                Beginner – Intermediate
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>⏱ Duration</h3>
+
+            <p>
+                3 Months / 72 Hours
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>💻 Format</h3>
+
+            <p>
+                Online Class
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= COURSE OVERVIEW ================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>Course Overview</h2>
+
+        <p>
+            Build a strong foundation and develop practical Java skills.
+        </p>
+
+    </div>
+
+
+    <div class="overview">
+
+        <p>
+            This course takes you from Java fundamentals to
+            intermediate programming concepts through a structured
+            12-week learning path. You will learn programming logic,
+            Object-Oriented Programming, exception handling,
+            file management, collections, GUI development,
+            JDBC, MySQL database connectivity, and practical
+            application development.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LEARNING OUTCOMES ================= -->
+
+<section class="outcomes">
+
+    <div class="section-title">
+
+        <h2 style="color:white;">
+            What You'll Learn
+        </h2>
+
+        <p style="color:#dce7ff;">
+            Skills you will develop throughout the course.
+        </p>
+
+    </div>
+
+
+    <div class="outcome-grid">
+
+        <div class="outcome-card">
+
+            <h3>💡 Programming Fundamentals</h3>
+
+            <p>
+                Understand programming logic, variables,
+                data types, operators, input/output and
+                control structures.
+            </p>
+
+        </div>
+
+
+        <div class="outcome-card">
+
+            <h3>🔄 Problem Solving</h3>
+
+            <p>
+                Develop logical thinking and solve programming
+                problems using structured approaches.
+            </p>
+
+        </div>
+
+
+        <div class="outcome-card">
+
+            <h3>🧱 Object-Oriented Programming</h3>
+
+            <p>
+                Learn classes, objects, encapsulation,
+                inheritance, polymorphism and abstraction.
+            </p>
+
+        </div>
+
+
+        <div class="outcome-card">
+
+            <h3>🗂 Data & File Management</h3>
+
+            <p>
+                Work with collections, exception handling
+                and file input/output.
+            </p>
+
+        </div>
+
+
+        <div class="outcome-card">
+
+            <h3>🖥 GUI Development</h3>
+
+            <p>
+                Build desktop interfaces using Java Swing
+                components.
+            </p>
+
+        </div>
+
+
+        <div class="outcome-card">
+
+            <h3>🗄 Database Connectivity</h3>
+
+            <p>
+                Connect Java applications to MySQL using JDBC.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SYLLABUS ================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>12-Week Course Outline</h2>
+
+        <p>
+            A structured journey from Java fundamentals
+            to an integrated desktop application.
+        </p>
+
+    </div>
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Week</th>
+
+                    <th>Theory & Concepts</th>
+
+                    <th>Details</th>
+
+                    <th>Hands-on Labs / Learning Outcomes</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+
+                    <td>1</td>
+
+                    <td>Getting Started</td>
+
+                    <td>
+                        Programming Logic, Environment Setup
+                        (JDK/IDE), First Program (Hello World)
+                    </td>
+
+                    <td>
+                        Basic Console Output & Java Program Execution
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>2</td>
+
+                    <td>Data & Variables</td>
+
+                    <td>
+                        Variables, Primitive Data Types,
+                        Type Casting, Operators
+                        (Arithmetic, Logical)
+                    </td>
+
+                    <td>
+                        Basic Arithmetic Operations Practice
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>3</td>
+
+                    <td>Controlling the Flow</td>
+
+                    <td>
+                        Input/Output (Scanner),
+                        if-else Statements,
+                        switch-case Logic
+                    </td>
+
+                    <td>
+                        Logic & Flow Control Application
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>4</td>
+
+                    <td>Loops & Logic</td>
+
+                    <td>
+                        for, while, do-while Loops,
+                        break/continue,
+                        Debugging Basics
+                    </td>
+
+                    <td>
+                        Loop & Iteration Practice
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>5</td>
+
+                    <td>Arrays & Methods</td>
+
+                    <td>
+                        Array Initialization,
+                        Multi-dimensional Arrays,
+                        Methods, Parameters,
+                        Method Overloading
+                    </td>
+
+                    <td>
+                        Modular Programming Practices
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>6</td>
+
+                    <td>OOP Basics (The Core)</td>
+
+                    <td>
+                        Introduction to OOP,
+                        Classes and Objects,
+                        Constructors,
+                        this Keyword
+                    </td>
+
+                    <td>
+                        Object Modeling Practice
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>7</td>
+
+                    <td>Encapsulation & Inheritance</td>
+
+                    <td>
+                        Access Modifiers,
+                        Encapsulation,
+                        Inheritance (extends),
+                        super Keyword
+                    </td>
+
+                    <td>
+                        Class Hierarchy Practice
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>8</td>
+
+                    <td>Polymorphism & Abstraction</td>
+
+                    <td>
+                        Method Overriding,
+                        Abstraction (Abstract Classes),
+                        Interfaces
+                    </td>
+
+                    <td>
+                        Interface & Abstraction Design
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>9</td>
+
+                    <td>Advanced OOP Concepts</td>
+
+                    <td>
+                        Packages, Enum,
+                        Inner Classes,
+                        Anonymous Classes,
+                        Date/Time API
+                    </td>
+
+                    <td>
+                        Advanced Object-Oriented Patterns
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>10</td>
+
+                    <td>Error Handling & File Management</td>
+
+                    <td>
+                        Exception Handling
+                        (try-catch-finally),
+                        Custom Exceptions,
+                        File I/O (Read/Write)
+                    </td>
+
+                    <td>
+                        Data Persistence Practices
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>11</td>
+
+                    <td>Collections Framework</td>
+
+                    <td>
+                        List (ArrayList/LinkedList),
+                        Sets (HashSet),
+                        Maps (HashMap),
+                        Iterators
+                    </td>
+
+                    <td>
+                        Data Structure Implementation
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>12</td>
+
+                    <td>GUI, Database & Final Project</td>
+
+                    <td>
+                        Swing GUI Components,
+                        JDBC (Connecting to MySQL),
+                        Building the Final Desktop App
+                    </td>
+
+                    <td>
+                        Integrated Desktop Application Project
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FINAL PROJECT ================= -->
+
+<section class="final-project">
+
+    <div class="project-box">
+
+        <h2>
+            🚀 Final Project
+        </h2>
+
+        <p>
+            Apply your Java skills by building an
+            integrated desktop application using
+            Java GUI and MySQL database connectivity.
+        </p>
+
+        <h3>
+            GUI + JDBC + MySQL
+        </h3>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REGISTER ================= -->
+
+<section class="register">
+
+    <h2>
+        Ready to Start Learning?
+    </h2>
+
+    <p>
+        Build your Java programming skills
+        step by step with Zenith Code Academy.
+    </p>
+
+    <a href="YOUR_GOOGLE_FORM_LINK"
+       target="_blank"
+       class="register-btn">
+
+        Register for Java Course →
+
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 Zenith Code Academy. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
