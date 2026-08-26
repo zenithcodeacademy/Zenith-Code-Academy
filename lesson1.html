@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Free Lesson 1 | Variable | Zenith Code Academy</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f8fc;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 22px 7%;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .lesson-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .lesson-label {
+            display: inline-block;
+            background: #e5e7eb;
+            color: #111827;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 17px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        h2 {
+            font-size: 25px;
+            margin-bottom: 15px;
+            color: #111827;
+        }
+
+        h3 {
+            margin: 20px 0 10px;
+        }
+
+        .example {
+            background: #f1f5f9;
+            padding: 18px;
+            border-left: 4px solid #111827;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin-top: 15px;
+        }
+
+        code {
+            font-family: Consolas, monospace;
+        }
+
+        .key-points {
+            padding-left: 20px;
+        }
+
+        .practice {
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #d1d5db;
+            color: #111827;
+            background: white;
+        }
+
+        .btn-primary {
+            background: #111827;
+            color: white;
+            border-color: #111827;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 30px;
+            }
+
+            .card {
+                padding: 22px;
+            }
+
+            .navigation {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a href="free-lessons.html">← Free Lessons</a>
+</header>
+
+<main class="container">
+
+    <section class="lesson-header">
+        <span class="lesson-label">FREE LESSON 01</span>
+
+        <h1>Variable</h1>
+
+        <p class="subtitle">
+            Programming မှာ Data တွေကို ဘယ်လိုသိမ်းပြီး အသုံးပြုမလဲ?
+        </p>
+    </section>
+
+
+    <!-- Learning Objective -->
+    <section class="card">
+        <h2>🎯 Learning Objective</h2>
+
+        <p>
+            ဒီ Lesson ပြီးဆုံးတဲ့အခါ Variable ဆိုတာဘာလဲ၊
+            Variable ကို ဘာကြောင့်အသုံးပြုရသလဲ၊
+            Data တွေကို Variable ထဲမှာ ဘယ်လိုသိမ်းဆည်းအသုံးပြုရသလဲ
+            ဆိုတာကို နားလည်လာမှာဖြစ်ပါတယ်။
+        </p>
+    </section>
+
+
+    <!-- What is Variable -->
+    <section class="card">
+        <h2>1. Variable ဆိုတာဘာလဲ?</h2>
+
+        <p>
+            Programming မှာ <strong>Variable</strong> ဆိုတာ
+            Data တစ်ခုကို သိမ်းဆည်းထားနိုင်တဲ့
+            <strong>နာမည်ပေးထားတဲ့နေရာတစ်ခု</strong> လို့
+            ရိုးရိုးရှင်းရှင်းနားလည်နိုင်ပါတယ်။
+        </p>
+
+        <div class="example">
+            <strong>Real-life Example 💡</strong><br><br>
+
+            သင့်အိမ်မှာ ပစ္စည်းတွေကို သိမ်းဖို့
+            Box တွေကို နာမည်တပ်ထားတယ်လို့ စဉ်းစားကြည့်ပါ။
+            <br><br>
+
+            <strong>Box → Name: Books</strong><br>
+            အဲဒီ Box ထဲမှာ စာအုပ်တွေ ထည့်ထားနိုင်ပါတယ်။
+            <br><br>
+
+            Programming မှာလည်း ဒီလိုပါပဲ။
+            Variable က Data ကို သိမ်းထားတဲ့ Box တစ်ခုလို
+            အလုပ်လုပ်ပါတယ်။
+        </div>
+    </section>
+
+
+    <!-- Why Variable -->
+    <section class="card">
+        <h2>2. Variable ကို ဘာကြောင့်သုံးတာလဲ?</h2>
+
+        <p>
+            Program တစ်ခုရေးတဲ့အခါ Data တွေကို
+            နောက်ပိုင်းမှာ ပြန်အသုံးပြုဖို့ လိုအပ်တတ်ပါတယ်။
+            အဲဒီအတွက် Data တွေကို Variable ထဲမှာ သိမ်းထားနိုင်ပါတယ်။
+        </p>
+
+        <div class="example">
+            ဥပမာ — Student တစ်ယောက်ရဲ့ အသက်ကို သိမ်းထားမယ်ဆိုပါစို့။
+            <br><br>
+
+            <strong>age = 20</strong>
+            <br><br>
+
+            ဒီမှာ <strong>age</strong> က Variable Name ဖြစ်ပြီး
+            <strong>20</strong> က သိမ်းထားတဲ့ Value ဖြစ်ပါတယ်။
+        </div>
+    </section>
+
+
+    <!-- Basic Structure -->
+    <section class="card">
+        <h2>3. Variable ရဲ့ Basic Structure</h2>
+
+        <p>
+            Variable ကို နားလည်ဖို့ အဓိကအချက်က
+            <strong>Name</strong> နဲ့ <strong>Value</strong> ပါ။
+        </p>
+
+        <pre><code>age = 20</code></pre>
+
+        <div class="example">
+            <strong>age</strong> → Variable Name<br>
+            <strong>20</strong> → Value
+        </div>
+    </section>
+
+
+    <!-- Python Example -->
+    <section class="card">
+        <h2>4. Programming Example</h2>
+
+        <p>
+            Python မှာ Variable တစ်ခုဖန်တီးဖို့
+            Variable Name နဲ့ Value ကို
+            <strong>=</strong> နဲ့ သတ်မှတ်နိုင်ပါတယ်။
+        </p>
+
+        <pre><code>name = "Su Mon"
+age = 20
+
+print(name)
+print(age)</code></pre>
+
+        <h3>Output</h3>
+
+        <pre><code>Su Mon
+20</code></pre>
+
+        <p>
+            ဒီမှာ <strong>name</strong> Variable ထဲမှာ
+            <strong>"Su Mon"</strong> ကို သိမ်းထားပြီး
+            <strong>age</strong> Variable ထဲမှာ
+            <strong>20</strong> ကို သိမ်းထားပါတယ်။
+        </p>
+    </section>
+
+
+    <!-- Reuse -->
+    <section class="card">
+        <h2>5. Variable ကို ပြန်အသုံးပြုခြင်း</h2>
+
+        <p>
+            Variable ရဲ့ အရေးကြီးတဲ့ အားသာချက်တစ်ခုက
+            သိမ်းထားတဲ့ Data ကို နောက်ပိုင်းမှာ
+            ပြန်အသုံးပြုနိုင်တာပါ။
+        </p>
+
+        <pre><code>score = 80
+
+print(score)
+print(score + 10)</code></pre>
+
+        <h3>Output</h3>
+
+        <pre><code>80
+90</code></pre>
+
+        <p>
+            <strong>score</strong> ထဲမှာ 80 ကို သိမ်းထားပြီး
+            အဲဒီ Variable ကို ပြန်အသုံးပြုပြီး
+            10 ထပ်ပေါင်းထားတာကို တွေ့ရပါတယ်။
+        </p>
+    </section>
+
+
+    <!-- Key Points -->
+    <section class="card">
+        <h2>📌 Key Points</h2>
+
+        <ul class="key-points">
+            <li>Variable သည် Data ကို သိမ်းဆည်းအသုံးပြုရန် နာမည်ပေးထားသောနေရာတစ်ခု ဖြစ်သည်။</li>
+            <li>Variable တစ်ခုမှာ အဓိကအားဖြင့် Name နဲ့ Value ရှိသည်။</li>
+            <li>Variable ထဲမှာ သိမ်းထားတဲ့ Data ကို နောက်ပိုင်းမှာ ပြန်အသုံးပြုနိုင်သည်။</li>
+            <li>Programming Language တစ်ခုနဲ့တစ်ခု Variable ရေးသားပုံ ကွာနိုင်သည်။</li>
+        </ul>
+    </section>
+
+
+    <!-- Practice -->
+    <section class="card practice">
+        <h2>📝 Mini Practice</h2>
+
+        <p>
+            အောက်ပါ Data တွေကို Variable အသုံးပြုပြီး
+            သိမ်းဆည်းကြည့်ပါ။
+        </p>
+
+        <br>
+
+        <p>
+            <strong>1.</strong> Your name
+        </p>
+
+        <p>
+            <strong>2.</strong> Your age
+        </p>
+
+        <p>
+            <strong>3.</strong> Your favorite programming language
+        </p>
+
+        <br>
+
+        <p>
+            💡 <strong>Hint:</strong>
+            Variable Name တွေကို ကိုယ်တိုင်ရွေးပြီး
+            Python Syntax နဲ့ ရေးကြည့်ပါ။
+        </p>
+    </section>
+
+
+    <!-- Navigation -->
+    <div class="navigation">
+
+        <a href="free-lessons.html" class="btn">
+            ← All Free Lessons
+        </a>
+
+        <a href="#" class="btn btn-primary">
+            Next Lesson →
+        </a>
+
+    </div>
+
+</main>
+
+
+<footer>
+    © 2026 Zenith Code Academy. All Rights Reserved.
+</footer>
+
+</body>
+</html>
