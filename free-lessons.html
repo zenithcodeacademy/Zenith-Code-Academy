@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Programming Lessons | Zenith Code Academy</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #10245c;
+            background: #f5f9ff;
+            line-height: 1.7;
+        }
+
+        /* ================= NAVBAR ================= */
+        nav {
+            width: 100%;
+            background: #061b4f;
+            padding: 15px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-area img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .brand {
+            color: white;
+        }
+
+        .brand h2 {
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        .brand p {
+            font-size: 11px;
+            color: #d9e5ff;
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-btn:hover {
+            color: #ffc928;
+        }
+
+        /* ================= HERO ================= */
+        .hero {
+            padding: 90px 7%;
+            text-align: center;
+            color: white;
+            background:
+                radial-gradient(circle at 80% 40%, #123f91, transparent 35%),
+                linear-gradient(135deg, #031643, #062c78);
+        }
+
+        .hero-icon {
+            width: 95px;
+            height: 95px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            background: #e8f3ff;
+            display: grid;
+            place-items: center;
+            font-size: 48px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 62px);
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #ffc928;
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: auto;
+            color: #dce7ff;
+            font-size: 18px;
+        }
+
+        /* ================= INTRO ================= */
+        section {
+            padding: 75px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #596b91;
+        }
+
+        .intro {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            color: #596b91;
+            font-size: 18px;
+        }
+
+        /* ================= LESSON GRID ================= */
+        .lessons {
+            background: white;
+        }
+
+        .lesson-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .lesson-card {
+            background: #f5f9ff;
+            border: 1px solid #dbe8ff;
+            border-radius: 15px;
+            padding: 28px;
+            transition: 0.3s;
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(20,70,140,0.12);
+        }
+
+        .lesson-number {
+            color: #1266d6;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .lesson-card h3 {
+            color: #10245c;
+            margin-bottom: 10px;
+        }
+
+        .lesson-card p {
+            color: #596b91;
+            margin-bottom: 18px;
+        }
+
+        .lesson-btn {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            background: #1266d6;
+            color: white;
+        }
+
+        .lesson-btn:hover {
+            background: #0b4fa9;
+        }
+
+        .coming {
+            opacity: 0.72;
+        }
+
+        .coming .lesson-btn {
+            background: #aab7cc;
+            pointer-events: none;
+        }
+
+        /* ================= LESSON 1 ================= */
+        .lesson-detail {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .lesson-box {
+            background: white;
+            border: 1px solid #dbe8ff;
+            border-radius: 18px;
+            padding: 42px;
+            box-shadow: 0 10px 30px rgba(20,70,140,0.08);
+        }
+
+        .lesson-label {
+            display: inline-block;
+            background: #e8f3ff;
+            color: #1266d6;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .lesson-box h3 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .lesson-box h4 {
+            margin: 28px 0 8px;
+            color: #10245c;
+        }
+
+        .lesson-box p {
+            color: #596b91;
+        }
+
+        .code {
+            margin: 18px 0;
+            padding: 20px;
+            border-radius: 10px;
+            background: #061b4f;
+            color: #e8f3ff;
+            overflow-x: auto;
+            font-family: Consolas, monospace;
+            line-height: 1.6;
+        }
+
+        .key-point {
+            margin-top: 25px;
+            padding: 20px;
+            border-left: 5px solid #ffc928;
+            background: #fff9df;
+            border-radius: 8px;
+            color: #10245c;
+        }
+
+        /* ================= PRACTICE ================= */
+        .practice {
+            background: #eef5ff;
+        }
+
+        .practice-box {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 38px;
+            border-radius: 16px;
+            border: 1px solid #dbe8ff;
+        }
+
+        .practice-box h3 {
+            margin-bottom: 12px;
+        }
+
+        .practice-box p,
+        .practice-box li {
+            color: #596b91;
+        }
+
+        .practice-box ul {
+            margin: 15px 0 0 22px;
+        }
+
+        /* ================= CTA ================= */
+        .cta {
+            text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #031643, #062c78);
+        }
+
+        .cta h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            color: #dce7ff;
+            margin-bottom: 25px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: #ffc928;
+            color: #061b4f;
+            padding: 13px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            background: #03143c;
+            color: white;
+            text-align: center;
+            padding: 30px 7%;
+        }
+
+        footer p {
+            color: #9baed1;
+        }
+
+        /* ================= MOBILE ================= */
+        @media (max-width: 850px) {
+            .lesson-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                padding: 10px 5%;
+            }
+
+            .brand h2 {
+                font-size: 14px;
+            }
+
+            .brand p {
+                font-size: 9px;
+            }
+
+            .logo-area img {
+                width: 45px;
+                height: 45px;
+            }
+
+            .back-btn {
+                font-size: 13px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .lesson-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lesson-box {
+                padding: 28px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav>
+    <div class="logo-area">
+        <img src="logo.png" alt="Zenith Code Academy Logo">
+        <div class="brand">
+            <h2>ZENITH CODE ACADEMY</h2>
+            <p>IT & PROGRAMMING EDUCATION</p>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-btn">← Back to Home</a>
+</nav>
+
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+    <div class="hero-icon">💻</div>
+
+    <h1>Free <span>Programming Lessons</span></h1>
+
+    <p>
+        Learn programming fundamentals step by step
+        with simple explanations, examples, and practice.
+    </p>
+</section>
+
+
+<!-- ================= INTRO ================= -->
+<section>
+    <div class="section-title">
+        <h2>Start Learning for Free</h2>
+        <p>Programming Fundamentals</p>
+    </div>
+
+    <div class="intro">
+        <p>
+            These free lessons are designed for beginners who want to
+            understand programming concepts clearly before moving into
+            a specific programming language.
+        </p>
+    </div>
+</section>
+
+
+<!-- ================= LESSON LIST ================= -->
+<section class="lessons">
+    <div class="section-title">
+        <h2>Programming Fundamentals</h2>
+        <p>Build your foundation one concept at a time.</p>
+    </div>
+
+    <div class="lesson-grid">
+
+        <div class="lesson-card">
+            <div class="lesson-number">LESSON 01</div>
+            <h3>What is Programming?</h3>
+            <p>
+                Understand what programming is, why we need it,
+                and how programs solve problems.
+            </p>
+            <a href="#lesson1" class="lesson-btn">Start Lesson →</a>
+        </div>
+
+        <div class="lesson-card coming">
+            <div class="lesson-number">LESSON 02</div>
+            <h3>Variables</h3>
+            <p>
+                Learn how programs store and work with information
+                using variables.
+            </p>
+            <span class="lesson-btn">Coming Soon</span>
+        </div>
+
+        <div class="lesson-card coming">
+            <div class="lesson-number">LESSON 03</div>
+            <h3>Data Types</h3>
+            <p>
+                Understand the different kinds of data used in programs.
+            </p>
+            <span class="lesson-btn">Coming Soon</span>
+        </div>
+
+        <div class="lesson-card coming">
+            <div class="lesson-number">LESSON 04</div>
+            <h3>Operators</h3>
+            <p>
+                Learn how operators are used to perform calculations
+                and make comparisons.
+            </p>
+            <span class="lesson-btn">Coming Soon</span>
+        </div>
+
+        <div class="lesson-card coming">
+            <div class="lesson-number">LESSON 05</div>
+            <h3>Input & Output</h3>
+            <p>
+                Learn how programs receive information and produce results.
+            </p>
+            <span class="lesson-btn">Coming Soon</span>
+        </div>
+
+        <div class="lesson-card coming">
+            <div class="lesson-number">LESSON 06</div>
+            <h3>Conditional Statements</h3>
+            <p>
+                Understand how programs make decisions using conditions.
+            </p>
+            <span class="lesson-btn">Coming Soon</span>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= LESSON 1 ================= -->
+<section id="lesson1">
+    <div class="section-title">
+        <h2>Lesson 01</h2>
+        <p>What is Programming?</p>
+    </div>
+
+    <div class="lesson-detail">
+        <div class="lesson-box">
+
+            <span class="lesson-label">PROGRAMMING FUNDAMENTALS</span>
+
+            <h3>What is Programming?</h3>
+
+            <p>
+                Programming is the process of creating instructions
+                that tell a computer what to do.
+            </p>
+
+            <h4>Why do we need programming?</h4>
+
+            <p>
+                Computers are powerful, but they need clear instructions
+                to perform tasks. Programming allows us to give those
+                instructions and build software, websites, mobile apps,
+                games, and many other systems.
+            </p>
+
+            <h4>A simple example</h4>
+
+            <p>
+                Imagine you want a computer to calculate the total price
+                of two items. You need to give it instructions such as:
+            </p>
+
+            <div class="code">1. Get the price of item A
+2. Get the price of item B
+3. Add the two prices
+4. Display the total</div>
+
+            <p>
+                These instructions describe the logic a program can follow
+                to solve the problem.
+            </p>
+
+            <div class="key-point">
+                <strong>Key Idea:</strong><br>
+                Programming is not only about writing code.
+                It is about <strong>thinking logically, solving problems,
+                and giving a computer clear instructions.</strong>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= PRACTICE ================= -->
+<section class="practice">
+    <div class="section-title">
+        <h2>Quick Practice</h2>
+        <p>Think before you code.</p>
+    </div>
+
+    <div class="practice-box">
+        <h3>💡 Try This</h3>
+
+        <p>
+            Imagine you want to create a program that calculates
+            the area of a rectangle.
+        </p>
+
+        <ul>
+            <li>What information does the program need?</li>
+            <li>What calculation should it perform?</li>
+            <li>What result should it display?</li>
+        </ul>
+    </div>
+</section>
+
+
+<!-- ================= CTA ================= -->
+<section class="cta">
+    <h2>Ready to Learn More?</h2>
+
+    <p>
+        Continue building your programming foundation
+        with Zenith Code Academy.
+    </p>
+
+    <a href="index.html#courses" class="cta-btn">
+        Explore Courses →
+    </a>
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <p>© 2026 Zenith Code Academy. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
