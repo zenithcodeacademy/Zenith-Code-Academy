@@ -1,0 +1,477 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-15F2EVRV46"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-15F2EVRV46');
+</script>
+
+<title>Free Lesson 2 | Data Types | Zenith Code Academy</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #f7f8fc;
+        color: #222;
+        line-height: 1.7;
+    }
+
+    header {
+        background: #111827;
+        color: white;
+        padding: 22px 7%;
+    }
+
+    header a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 50px 20px;
+    }
+
+    .lesson-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .lesson-label {
+        display: inline-block;
+        background: #e5e7eb;
+        color: #111827;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        font-size: 38px;
+        margin-bottom: 12px;
+    }
+
+    .subtitle {
+        color: #666;
+        font-size: 17px;
+    }
+
+    .card {
+        background: white;
+        padding: 30px;
+        border-radius: 16px;
+        margin-bottom: 25px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    }
+
+    h2 {
+        font-size: 25px;
+        margin-bottom: 15px;
+        color: #111827;
+    }
+
+    h3 {
+        margin: 20px 0 10px;
+    }
+
+    .example {
+        background: #f1f5f9;
+        padding: 18px;
+        border-left: 4px solid #111827;
+        border-radius: 8px;
+        margin: 15px 0;
+    }
+
+    pre {
+        background: #111827;
+        color: #f9fafb;
+        padding: 20px;
+        border-radius: 10px;
+        overflow-x: auto;
+        margin-top: 15px;
+    }
+
+    code {
+        font-family: Consolas, monospace;
+    }
+
+    .key-points {
+        padding-left: 20px;
+    }
+
+    .practice {
+        background: #f8fafc;
+        border: 1px solid #e5e7eb;
+    }
+
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        margin-top: 35px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 12px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        border: 1px solid #d1d5db;
+        color: #111827;
+        background: white;
+    }
+
+    .btn-primary {
+        background: #111827;
+        color: white;
+        border-color: #111827;
+    }
+
+    footer {
+        text-align: center;
+        padding: 30px 20px;
+        color: #777;
+        font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 30px;
+        }
+
+        .card {
+            padding: 22px;
+        }
+
+        .navigation {
+            flex-direction: column;
+        }
+
+        .btn {
+            text-align: center;
+        }
+    }
+</style>
+
+</head><body><header>
+    <a href="free-lessons.html">← Free Lessons</a>
+</header><main class="container"><section class="lesson-header">
+    <span class="lesson-label">FREE LESSON 02</span>
+
+    <h1>Data Types</h1>
+
+    <p class="subtitle">
+        Programming မှာ Data တွေကို ဘယ်လိုအမျိုးအစားခွဲခြားသတ်မှတ်မလဲ?
+    </p>
+</section>
+
+
+<!-- Learning Objective -->
+<section class="card">
+    <h2>🎯 Learning Objective</h2>
+
+    <p>
+        ဒီ Lesson ပြီးဆုံးတဲ့အခါ Data Type ဆိုတာဘာလဲ၊
+        Data တွေကို ဘာကြောင့် အမျိုးအစားခွဲခြားရသလဲ၊
+        Programming မှာ အသုံးများတဲ့ Data Types တွေကို
+        ခွဲခြားနားလည်နိုင်မှာဖြစ်ပါတယ်။
+    </p>
+</section>
+
+
+<!-- What is Data Type -->
+<section class="card">
+    <h2>1. Data Type ဆိုတာဘာလဲ?</h2>
+
+    <p>
+        Programming မှာ <strong>Data Type</strong> ဆိုတာ
+        Data တစ်ခုရဲ့ <strong>အမျိုးအစား</strong> ကို သတ်မှတ်ပေးတာဖြစ်ပါတယ်။
+    </p>
+
+    <div class="example">
+        <strong>Real-life Example 💡</strong><br><br>
+
+        စာအုပ်တစ်အုပ်၊ ရေတစ်ခွက်နဲ့ လူတစ်ယောက်ရဲ့ အသက်ဟာ
+        Data တွေဖြစ်ပေမယ့် အမျိုးအစားမတူကြပါဘူး။
+        <br><br>
+
+        Programming မှာလည်း
+        <strong>Number</strong>၊ <strong>Text</strong>၊
+        <strong>True / False</strong> စတဲ့ Data တွေကို
+        အမျိုးအစားခွဲခြားထားပါတယ်။
+    </div>
+</section>
+
+
+<!-- Why Data Types -->
+<section class="card">
+    <h2>2. Data Type ကို ဘာကြောင့်သုံးတာလဲ?</h2>
+
+    <p>
+        Program တစ်ခုမှာ Data အမျိုးမျိုးကို
+        ကိုင်တွယ်အသုံးပြုရပါတယ်။
+        Data ရဲ့ အမျိုးအစားကို သိထားမှ
+        အဲဒီ Data ပေါ်မှာ ဘယ်လိုလုပ်ဆောင်မှုတွေ ပြုလုပ်နိုင်မလဲ
+        ဆိုတာကို Programming Language က သတ်မှတ်နိုင်ပါတယ်။
+    </p>
+
+    <div class="example">
+        ဥပမာ —
+        <br><br>
+
+        <strong>20</strong> ဆိုရင် Number ဖြစ်ပြီး
+        တွက်ချက်မှုတွေ ပြုလုပ်နိုင်ပါတယ်။
+        <br><br>
+
+        <strong>"Hello"</strong> ဆိုရင် Text ဖြစ်ပြီး
+        စာသားအဖြစ် အသုံးပြုပါတယ်။
+        <br><br>
+
+        <strong>True</strong> / <strong>False</strong> ဆိုရင်
+        Boolean Data ဖြစ်ပြီး
+        အခြေအနေတစ်ခု မှန်၊ မမှန်ကို ကိုယ်စားပြုပါတယ်။
+    </div>
+</section>
+
+
+<!-- Common Data Types -->
+<section class="card">
+    <h2>3. Common Data Types</h2>
+
+    <p>
+        Programming Language အများစုမှာ
+        Data Type အမျိုးအစားများစွာရှိပါတယ်။
+        အခြေခံအနေနဲ့ အသုံးများတဲ့ Data Types တွေကတော့ —
+    </p>
+
+    <div class="example">
+        <strong>Integer</strong> → ကိန်းပြည့်<br><br>
+
+        <strong>Float</strong> → ဒဿမကိန်း<br><br>
+
+        <strong>String</strong> → စာသား<br><br>
+
+        <strong>Boolean</strong> → True / False
+    </div>
+</section>
+
+
+<!-- Integer -->
+<section class="card">
+    <h2>4. Integer</h2>
+
+    <p>
+        <strong>Integer</strong> ဆိုတာ
+        ဒဿမမပါဝင်တဲ့ ကိန်းပြည့်တွေကို ဆိုလိုပါတယ်။
+    </p>
+
+    <div class="example">
+        ဥပမာ — <strong>10, 20, 0, -5</strong>
+    </div>
+
+    <pre><code>age = 20
+
+print(age)</code></pre>
+
+    <h3>Output</h3>
+
+    <pre><code>20</code></pre>
+</section>
+
+
+<!-- Float -->
+<section class="card">
+    <h2>5. Float</h2>
+
+    <p>
+        <strong>Float</strong> ဆိုတာ
+        ဒဿမကိန်းတွေကို ကိုယ်စားပြုတဲ့ Data Type ဖြစ်ပါတယ်။
+    </p>
+
+    <div class="example">
+        ဥပမာ — <strong>3.14, 10.5, -2.5</strong>
+    </div>
+
+    <pre><code>price = 10.5
+
+print(price)</code></pre>
+
+    <h3>Output</h3>
+
+    <pre><code>10.5</code></pre>
+</section>
+
+
+<!-- String -->
+<section class="card">
+    <h2>6. String</h2>
+
+    <p>
+        <strong>String</strong> ဆိုတာ
+        စာသားတွေကို ကိုယ်စားပြုတဲ့ Data Type ဖြစ်ပါတယ်။
+    </p>
+
+    <div class="example">
+        စာသားတွေကို Programming Language အများစုမှာ
+        Quotes တွေအတွင်း ရေးသားလေ့ရှိပါတယ်။
+    </div>
+
+    <pre><code>name = "Zenith"
+
+print(name)</code></pre>
+
+    <h3>Output</h3>
+
+    <pre><code>Zenith</code></pre>
+</section>
+
+
+<!-- Boolean -->
+<section class="card">
+    <h2>7. Boolean</h2>
+
+    <p>
+        <strong>Boolean</strong> ဆိုတာ
+        <strong>True</strong> ဒါမှမဟုတ်
+        <strong>False</strong> ဆိုတဲ့ တန်ဖိုးနှစ်မျိုးထဲက
+        တစ်ခုကိုသာ ကိုယ်စားပြုတဲ့ Data Type ဖြစ်ပါတယ်။
+    </p>
+
+    <div class="example">
+        Boolean ကို Program တစ်ခုမှာ
+        အခြေအနေတစ်ခု မှန်၊ မမှန် စစ်ဆေးတဲ့အခါ
+        အသုံးများပါတယ်။
+    </div>
+
+    <pre><code>is_student = True
+
+print(is_student)</code></pre>
+
+    <h3>Output</h3>
+
+    <pre><code>True</code></pre>
+</section>
+
+
+<!-- Python Example -->
+<section class="card">
+    <h2>8. Programming Example</h2>
+
+    <p>
+        Data အမျိုးအစားတွေကို Variable တွေနဲ့
+        တွဲပြီး အသုံးပြုနိုင်ပါတယ်။
+    </p>
+
+    <pre><code>age = 20
+
+height = 5.8
+name = "Zenith"
+is_student = True
+
+print(age)
+print(height)
+print(name)
+print(is_student)</code></pre>
+
+    <h3>Output</h3>
+
+    <pre><code>20
+
+5.8
+Zenith
+True</code></pre>
+
+    <p>
+        ဒီ Program မှာ Variable တစ်ခုချင်းစီထဲမှာ
+        သိမ်းထားတဲ့ Data တွေဟာ
+        အမျိုးအစားမတူကြတာကို တွေ့နိုင်ပါတယ်။
+    </p>
+</section>
+
+
+<!-- Key Points -->
+<section class="card">
+    <h2>📌 Key Points</h2>
+
+    <ul class="key-points">
+        <li>Data Type သည် Data တစ်ခု၏ အမျိုးအစားကို သတ်မှတ်ပေးသည်။</li>
+        <li>Programming မှာ Data အမျိုးအစားအမျိုးမျိုး ရှိသည်။</li>
+        <li>Integer သည် ကိန်းပြည့်များကို ကိုယ်စားပြုသည်။</li>
+        <li>Float သည် ဒဿမကိန်းများကို ကိုယ်စားပြုသည်။</li>
+        <li>String သည် စာသားများကို ကိုယ်စားပြုသည်။</li>
+        <li>Boolean သည် True သို့မဟုတ် False ကို ကိုယ်စားပြုသည်။</li>
+        <li>Programming Language တစ်ခုနဲ့တစ်ခု Data Type များနှင့် ရေးသားပုံ ကွာနိုင်သည်။</li>
+    </ul>
+</section>
+
+
+<!-- Practice -->
+<section class="card practice">
+    <h2>📝 Mini Practice</h2>
+
+    <p>
+        အောက်ပါ Data တွေရဲ့ Data Type ကို
+        ခွဲခြားကြည့်ပါ။
+    </p>
+
+    <br>
+
+    <p>
+        <strong>1.</strong> 100
+    </p>
+
+    <p>
+        <strong>2.</strong> 3.14
+    </p>
+
+    <p>
+        <strong>3.</strong> "Hello World"
+    </p>
+
+    <p>
+        <strong>4.</strong> True
+    </p>
+
+    <br>
+
+    <p>
+        💡 <strong>Hint:</strong>
+        Integer, Float, String, Boolean ထဲက
+        သင့်တော်တဲ့ Data Type ကို ရွေးကြည့်ပါ။
+    </p>
+</section>
+
+
+<!-- Navigation -->
+<div class="navigation">
+
+    <a href="lesson1.html" class="btn">
+        ← Previous Lesson
+    </a>
+
+    <a href="lesson3.html" class="btn btn-primary">
+        Next Lesson →
+    </a>
+
+</div>
+
+</main><footer>
+    © 2026 Zenith Code Academy. All Rights Reserved.
+</footer></body>
+</html>
