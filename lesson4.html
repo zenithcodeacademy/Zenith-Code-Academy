@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,5 +40,572 @@
 
         header {
             background: #111827;
-            color: whit
-```
+            color: white;
+            padding: 22px 7%;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .lesson-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .lesson-label {
+            display: inline-block;
+            background: #e5e7eb;
+            color: #111827;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 17px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        h2 {
+            font-size: 25px;
+            margin-bottom: 15px;
+            color: #111827;
+        }
+
+        h3 {
+            margin: 20px 0 10px;
+        }
+
+        .example {
+            background: #f1f5f9;
+            padding: 18px;
+            border-left: 4px solid #111827;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin-top: 15px;
+        }
+
+        code {
+            font-family: Consolas, monospace;
+        }
+
+        .key-points {
+            padding-left: 20px;
+        }
+
+        .practice {
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #d1d5db;
+            color: #111827;
+            background: white;
+        }
+
+        .btn-primary {
+            background: #111827;
+            color: white;
+            border-color: #111827;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .card {
+                padding: 22px;
+            }
+
+            .navigation {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+    <a href="free-lessons.html">← Free Lessons</a>
+</header>
+
+<main class="container">
+
+    <section class="lesson-header">
+
+        <span class="lesson-label">FREE LESSON 04</span>
+
+        <h1>Operators</h1>
+
+        <p class="subtitle">
+            Programming မှာ Data တွေကို ဘယ်လိုတွက်ချက်၊ နှိုင်းယှဉ်ပြီး လုပ်ဆောင်ချက်တွေ ပြုလုပ်မလဲ?
+        </p>
+
+    </section>
+
+
+    <!-- Learning Objective -->
+
+    <section class="card">
+
+        <h2>🎯 Learning Objective</h2>
+
+        <p>
+            ဒီ Lesson ပြီးဆုံးတဲ့အခါ Operator ဆိုတာဘာလဲ၊
+            Programming မှာ Operators တွေကို ဘာကြောင့်အသုံးပြုရသလဲ၊
+            အသုံးများတဲ့ Operators အမျိုးအစားတွေကို
+            ခွဲခြားနားလည်ပြီး အသုံးပြုနိုင်မှာဖြစ်ပါတယ်။
+        </p>
+
+    </section>
+
+
+    <!-- What is Operator -->
+
+    <section class="card">
+
+        <h2>1. Operator ဆိုတာဘာလဲ?</h2>
+
+        <p>
+            Programming မှာ <strong>Operator</strong> ဆိုတာ
+            Data တွေ၊ Values တွေကို
+            တွက်ချက်ခြင်း၊ နှိုင်းယှဉ်ခြင်း၊
+            သတ်မှတ်ခြင်း စတဲ့ လုပ်ဆောင်ချက်တွေ
+            ပြုလုပ်ဖို့ အသုံးပြုတဲ့ Symbol ဖြစ်ပါတယ်။
+        </p>
+
+        <div class="example">
+
+            <strong>Real-life Example 💡</strong><br><br>
+
+            10 + 5 ဆိုတဲ့ Expression မှာ
+            <strong>+</strong> က Number နှစ်ခုကို
+            ပေါင်းဖို့ အသုံးပြုတဲ့ Operator ဖြစ်ပါတယ်။
+
+            <br><br>
+
+            <strong>10</strong> နဲ့ <strong>5</strong> က
+            Values တွေဖြစ်ပြီး
+            <strong>+</strong> က Operator ဖြစ်ပါတယ်။
+
+        </div>
+
+    </section>
+
+
+    <!-- Arithmetic -->
+
+    <section class="card">
+
+        <h2>2. Arithmetic Operators</h2>
+
+        <p>
+            <strong>Arithmetic Operators</strong> တွေကို
+            Mathematical calculations တွေ ပြုလုပ်တဲ့အခါ
+            အသုံးပြုပါတယ်။
+        </p>
+
+        <div class="example">
+
+            <strong>+ </strong> → Addition<br><br>
+
+            <strong>- </strong> → Subtraction<br><br>
+
+            <strong>* </strong> → Multiplication<br><br>
+
+            <strong>/ </strong> → Division<br><br>
+
+            <strong>% </strong> → Remainder
+
+        </div>
+
+        <pre><code>a = 10
+b = 3
+
+print(a + b)
+print(a - b)
+print(a * b)
+print(a / b)
+print(a % b)</code></pre>
+
+        <h3>Output</h3>
+
+        <pre><code>13
+7
+30
+3.3333333333333335
+1</code></pre>
+
+        <p>
+            ဒီမှာ <strong>%</strong> Operator က
+            Division ပြီးတဲ့အခါ ကျန်တဲ့
+            <strong>Remainder</strong> ကို ပြန်ပေးပါတယ်။
+        </p>
+
+    </section>
+
+
+    <!-- Modulus -->
+
+    <section class="card">
+
+        <h2>3. % Operator ကို နားလည်ကြည့်မယ်</h2>
+
+        <p>
+            <strong>%</strong> Operator ကို
+            Programming မှာ အရမ်းအသုံးများပါတယ်။
+            အထူးသဖြင့် Number တစ်ခုရဲ့
+            <strong>Even / Odd</strong> ကို စစ်တဲ့အခါ အသုံးဝင်ပါတယ်။
+        </p>
+
+        <div class="example">
+
+            <strong>10 % 2 = 0</strong><br><br>
+
+            10 ကို 2 နဲ့စားတဲ့အခါ
+            Remainder က 0 ဖြစ်တဲ့အတွက်
+            10 ဟာ Even Number ဖြစ်ပါတယ်။
+
+            <br><br>
+
+            <strong>7 % 2 = 1</strong><br><br>
+
+            7 ကို 2 နဲ့စားတဲ့အခါ
+            Remainder က 1 ဖြစ်တဲ့အတွက်
+            7 ဟာ Odd Number ဖြစ်ပါတယ်။
+
+        </div>
+
+        <pre><code>number = 7
+
+print(number % 2)</code></pre>
+
+        <h3>Output</h3>
+
+        <pre><code>1</code></pre>
+
+    </section>
+
+
+    <!-- Comparison -->
+
+    <section class="card">
+
+        <h2>4. Comparison Operators</h2>
+
+        <p>
+            <strong>Comparison Operators</strong> တွေကို
+            Values နှစ်ခုကို နှိုင်းယှဉ်တဲ့အခါ
+            အသုံးပြုပါတယ်။
+        </p>
+
+        <div class="example">
+
+            <strong>==</strong> → Equal to<br><br>
+
+            <strong>!=</strong> → Not equal to<br><br>
+
+            <strong>&gt;</strong> → Greater than<br><br>
+
+            <strong>&lt;</strong> → Less than<br><br>
+
+            <strong>&gt;=</strong> → Greater than or equal to<br><br>
+
+            <strong>&lt;=</strong> → Less than or equal to
+
+        </div>
+
+        <pre><code>age = 20
+
+print(age == 20)
+print(age &gt; 18)
+print(age &lt; 18)</code></pre>
+
+        <h3>Output</h3>
+
+        <pre><code>True
+True
+False</code></pre>
+
+        <p>
+            Comparison Operator တွေက
+            အများအားဖြင့် <strong>True</strong> သို့မဟုတ်
+            <strong>False</strong> ဆိုတဲ့ Boolean Result ကို
+            ပြန်ပေးပါတယ်။
+        </p>
+
+    </section>
+
+
+    <!-- Logical -->
+
+    <section class="card">
+
+        <h2>5. Logical Operators</h2>
+
+        <p>
+            <strong>Logical Operators</strong> တွေကို
+            Conditions နှစ်ခု သို့မဟုတ် နှစ်ခုထက်ပိုတာတွေကို
+            ပေါင်းစပ်ပြီး စစ်ဆေးတဲ့အခါ အသုံးပြုပါတယ်။
+        </p>
+
+        <div class="example">
+
+            <strong>AND</strong> → Conditions အားလုံး True ဖြစ်ရမယ်<br><br>
+
+            <strong>OR</strong> → Condition တစ်ခုခု True ဖြစ်ရင် ရမယ်<br><br>
+
+            <strong>NOT</strong> → True / False ကို ပြောင်းပြန်လုပ်တယ်
+
+        </div>
+
+        <pre><code>age = 20
+has_id = True
+
+print(age &gt;= 18 and has_id)
+print(age &lt; 18 or has_id)</code></pre>
+
+        <h3>Output</h3>
+
+        <pre><code>True
+True</code></pre>
+
+    </section>
+
+
+    <!-- Assignment -->
+
+    <section class="card">
+
+        <h2>6. Assignment Operators</h2>
+
+        <p>
+            <strong>Assignment Operator</strong> ကို
+            Value တစ်ခုကို Variable ထဲ
+            သတ်မှတ်ပေးတဲ့အခါ အသုံးပြုပါတယ်။
+        </p>
+
+        <div class="example">
+
+            <strong>=</strong> → Value သတ်မှတ်ခြင်း<br><br>
+
+            <strong>+=</strong> → ပေါင်းပြီး ပြန်သတ်မှတ်ခြင်း<br><br>
+
+            <strong>-=</strong> → နုတ်ပြီး ပြန်သတ်မှတ်ခြင်း<br><br>
+
+            <strong>*=</strong> → မြှောက်ပြီး ပြန်သတ်မှတ်ခြင်း<br><br>
+
+            <strong>/=</strong> → စားပြီး ပြန်သတ်မှတ်ခြင်း
+
+        </div>
+
+        <pre><code>score = 10
+
+score += 5
+
+print(score)</code></pre>
+
+        <h3>Output</h3>
+
+        <pre><code>15</code></pre>
+
+    </section>
+
+
+    <!-- Increment Decrement -->
+
+    <section class="card">
+
+        <h2>7. Increment &amp; Decrement</h2>
+
+        <p>
+            Programming မှာ Value တစ်ခုကို
+            တစ်ဆင့်တိုးခြင်း၊ တစ်ဆင့်လျှော့ခြင်းတွေကို
+            Increment / Decrement လို့ခေါ်ပါတယ်။
+        </p>
+
+        <div class="example">
+
+            <strong>Increment</strong> → Value ကို တိုးခြင်း<br><br>
+
+            <strong>Decrement</strong> → Value ကို လျှော့ခြင်း
+
+        </div>
+
+        <p>
+            Programming Language တစ်ခုနဲ့တစ်ခု
+            Increment / Decrement ရေးသားပုံ
+            ကွာနိုင်ပါတယ်။
+        </p>
+
+        <pre><code># Python
+
+count = 5
+
+count += 1
+
+print(count)</code></pre>
+
+        <h3>Output</h3>
+
+        <pre><code>6</code></pre>
+
+    </section>
+
+
+    <!-- Key Points -->
+
+    <section class="card">
+
+        <h2>📌 Key Points</h2>
+
+        <ul class="key-points">
+
+            <li>Operator သည် Data သို့မဟုတ် Values များပေါ်တွင် လုပ်ဆောင်ချက်ပြုလုပ်ရန် အသုံးပြုသည်။</li>
+
+            <li>Arithmetic Operators များကို Mathematical calculations များအတွက် အသုံးပြုသည်။</li>
+
+            <li><strong>%</strong> Operator သည် Division ပြီးနောက် Remainder ကို ပြန်ပေးသည်။</li>
+
+            <li>Comparison Operators များသည် Values များကို နှိုင်းယှဉ်ရန် အသုံးပြုသည်။</li>
+
+            <li>Comparison Result သည် အများအားဖြင့် True သို့မဟုတ် False ဖြစ်သည်။</li>
+
+            <li>Logical Operators များကို Conditions များကို ပေါင်းစပ်ရန် အသုံးပြုသည်။</li>
+
+            <li>Assignment Operators များကို Values များကို Variable ထဲ သတ်မှတ်ရန် အသုံးပြုသည်။</li>
+
+            <li>Programming Language တစ်ခုနဲ့တစ်ခု Operator ရေးသားပုံအချို့ ကွာနိုင်သည်။</li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- Practice -->
+
+    <section class="card practice">
+
+        <h2>📝 Mini Practice</h2>
+
+        <p>
+            အောက်ပါ Questions တွေကို ကိုယ်တိုင်စဉ်းစားကြည့်ပါ။
+        </p>
+
+        <br>
+
+        <p>
+            <strong>1.</strong> 15 + 7 ရဲ့ Result က ဘာလဲ?
+        </p>
+
+        <p>
+            <strong>2.</strong> 20 % 3 ရဲ့ Remainder က ဘာလဲ?
+        </p>
+
+        <p>
+            <strong>3.</strong> 10 &gt; 5 ဆိုရင် Result က True လား False လား?
+        </p>
+
+        <p>
+            <strong>4.</strong> Number တစ်ခုကို Even / Odd ခွဲဖို့ ဘယ် Operator ကို အသုံးပြုနိုင်မလဲ?
+        </p>
+
+        <p>
+            <strong>5.</strong> Conditions နှစ်ခုလုံး True ဖြစ်ရမယ်ဆိုရင် ဘယ် Logical Operator ကို အသုံးပြုမလဲ?
+        </p>
+
+        <br>
+
+        <p>
+            💡 <strong>Hint:</strong>
+            Arithmetic, Comparison, Logical Operators တွေကို
+            ပြန်ကြည့်ပြီး ဖြေကြည့်ပါ။
+        </p>
+
+    </section>
+
+
+    <!-- Navigation -->
+
+    <div class="navigation">
+
+        <a href="lesson3.html" class="btn">
+            ← Previous Lesson
+        </a>
+
+        <a href="free-lessons.html" class="btn btn-primary">
+            All Free Lessons →
+        </a>
+
+    </div>
+
+</main>
+
+<footer>
+    © 2026 Zenith Code Academy. All Rights Reserved.
+</footer>
+
+</body>
+</html>
