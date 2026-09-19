@@ -15,4 +15,4 @@
 
 ### 🌐 Links & Projects:
 * **Website:** [https://zenithcodeacademy.github.io/Zenith-Code-Academy]
-* **Contact:** [t.me/zenithcodeacademy]
+* **Contact:** [https://t.me/zenithcodeacademy]
