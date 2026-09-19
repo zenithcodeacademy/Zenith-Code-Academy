@@ -2,7 +2,7 @@
 <h3 align="center">Hi there 👋, Welcome to Zenith Code Academy </h3>
 
 <p align="center">
-  💻 Running <b>Zenith Code Academy</b> & conducting Online Coding Classes [Python, Java]!<br>
+  💻 Running <b>Zenith Code Academy</b> & conducting Online Coding Classes Python, Java!<br>
   Learning, building, and sharing programming knowledge step by step. 🚀
 </p>
 
@@ -14,5 +14,5 @@
 * 🛠️ Exploring C++, Python, Java and building web projects.
 
 ### 🌐 Links & Projects:
-* **Website:** [https://zenithcodeacademy.github.io/Zenith-Code-Academy]
-* **Contact:** [https://t.me/zenithcodeacademy]
+* **Website:** https://zenithcodeacademy.github.io/Zenith-Code-Academy
+* **Contact:** https://t.me/zenithcodeacademy
