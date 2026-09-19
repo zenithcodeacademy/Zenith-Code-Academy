@@ -1,0 +1,996 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-15F2EVRV46"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-15F2EVRV46');
+    </script>
+
+    <title>Computer Science Course | Zenith Code Academy</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #10245c;
+            background: #f5f9ff;
+            line-height: 1.6;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            width: 100%;
+            background: #061b4f;
+            padding: 15px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-area img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .brand {
+            color: white;
+        }
+
+        .brand h2 {
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        .brand p {
+            font-size: 11px;
+            color: #d9e5ff;
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            color: #ffc928;
+        }
+
+        /* ================= HERO ================= */
+
+        .course-hero {
+            padding: 90px 7%;
+            background:
+                radial-gradient(circle at 80% 50%, #123f91, transparent 35%),
+                linear-gradient(135deg, #031643, #062c78);
+            color: white;
+            text-align: center;
+        }
+
+        .course-icon {
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            border-radius: 50%;
+            background: #e8f3ff;
+            display: grid;
+            place-items: center;
+            font-size: 55px;
+            margin-bottom: 25px;
+        }
+
+        .course-hero h1 {
+            font-size: clamp(40px, 6vw, 65px);
+            margin-bottom: 15px;
+        }
+
+        .course-hero h1 span {
+            color: #ffc928;
+        }
+
+        .course-hero p {
+            max-width: 750px;
+            margin: auto;
+            color: #dce7ff;
+            font-size: 18px;
+        }
+
+        /* ================= COURSE INFO ================= */
+
+        .course-info-section {
+            padding: 60px 7%;
+            background: white;
+        }
+
+        .course-info {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .info-card {
+            padding: 25px;
+            text-align: center;
+            border-radius: 12px;
+            background: #f5f9ff;
+            border: 1px solid #dbe8ff;
+        }
+
+        .info-card h3 {
+            color: #10245c;
+            margin-bottom: 8px;
+        }
+
+        .info-card p {
+            color: #596b91;
+        }
+
+        /* ================= CONTENT ================= */
+
+        section {
+            padding: 80px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            color: #10245c;
+        }
+
+        .section-title p {
+            color: #596b91;
+        }
+
+        /* ================= OVERVIEW ================= */
+
+        .overview {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .overview p {
+            color: #596b91;
+            font-size: 18px;
+        }
+
+        /* ================= LEARNING OUTCOMES ================= */
+
+        .outcomes {
+            background: #061b4f;
+            color: white;
+        }
+
+        .outcome-grid {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .outcome-card {
+            padding: 25px;
+            border: 1px solid #294474;
+            border-radius: 12px;
+            background: #08235f;
+        }
+
+        .outcome-card h3 {
+            color: #ffc928;
+            margin-bottom: 8px;
+        }
+
+        .outcome-card p {
+            color: #dce7ff;
+        }
+
+        /* ================= SYLLABUS ================= */
+
+        .table-container {
+            max-width: 1200px;
+            margin: auto;
+            overflow-x: auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(20,70,140,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 900px;
+        }
+
+        th {
+            background: #071d55;
+            color: white;
+            padding: 18px;
+            text-align: left;
+        }
+
+        td {
+            padding: 18px;
+            border-bottom: 1px solid #dbe8ff;
+            vertical-align: top;
+        }
+
+        tr:hover {
+            background: #f5f9ff;
+        }
+
+        td:first-child {
+            font-weight: bold;
+            color: #1266d6;
+        }
+
+        /* ================= FINAL PROJECT ================= */
+
+        .final-project {
+            background: #eef5ff;
+            text-align: center;
+        }
+
+        .project-box {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 45px;
+            border-radius: 18px;
+            border: 1px solid #dbe8ff;
+            box-shadow: 0 10px 30px rgba(20,70,140,0.1);
+        }
+
+        .project-box h2 {
+            color: #10245c;
+            margin-bottom: 15px;
+        }
+
+        .project-box p {
+            color: #596b91;
+            margin-bottom: 25px;
+        }
+
+        /* ================= REGISTER ================= */
+
+        .register {
+            text-align: center;
+            background:
+                linear-gradient(135deg, #031643, #062c78);
+            color: white;
+        }
+
+        .register h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .register p {
+            color: #dce7ff;
+            margin-bottom: 30px;
+        }
+
+        .register-btn {
+            display: inline-block;
+            background: #ffc928;
+            color: #061b4f;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .register-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255,201,40,0.3);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #03143c;
+            color: white;
+            text-align: center;
+            padding: 30px 7%;
+        }
+
+        footer p {
+            color: #9baed1;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 800px) {
+
+            .course-info {
+                grid-template-columns: 1fr;
+            }
+
+            .outcome-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .course-hero {
+                padding: 70px 5%;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .register h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            nav {
+                padding: 10px 5%;
+            }
+
+            .brand h2 {
+                font-size: 14px;
+            }
+
+            .brand p {
+                font-size: 9px;
+            }
+
+            .logo-area img {
+                width: 45px;
+                height: 45px;
+            }
+
+            .back-btn {
+                font-size: 13px;
+            }
+
+            .course-hero h1 {
+                font-size: 40px;
+            }
+
+            .course-hero p {
+                font-size: 16px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo-area">
+
+        <img src="logo.png" alt="Zenith Code Academy Logo">
+
+        <div class="brand">
+
+            <h2>ZENITH CODE ACADEMY</h2>
+
+            <p>IT & PROGRAMMING EDUCATION</p>
+
+        </div>
+
+    </div>
+
+    <a href="index.html" class="back-btn">
+        ← Back to Home
+    </a>
+
+</nav>
+
+
+<!-- ================= COURSE HERO ================= -->
+
+<section class="course-hero">
+
+    <div class="course-icon">
+        💻
+    </div>
+
+    <h1>
+        Computer <span>Science</span>
+    </h1>
+
+    <p>
+        Build a strong foundation in Computer Science,
+        programming logic, algorithms, problem solving,
+        data structures, and computational thinking.
+    </p>
+
+</section>
+
+
+<!-- ================= COURSE INFO ================= -->
+
+<section class="course-info-section">
+
+    <div class="course-info">
+
+        <div class="info-card">
+
+            <h3>🎓 Level</h3>
+
+            <p>
+                Beginner – Intermediate
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>⏱ Duration</h3>
+
+            <p>
+                3 Months / 72 Hours
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>💻 Format</h3>
+
+            <p>
+                Online Class
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= COURSE OVERVIEW ================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>Course Overview</h2>
+
+        <p>
+            Understand Computer Science from the fundamentals.
+        </p>
+
+    </div>
+
+
+    <div class="overview">
+
+        <p>
+            This course introduces the fundamental concepts of
+            Computer Science through programming logic,
+            problem solving, algorithms, data representation,
+            flowcharts, programming fundamentals, data structures,
+            and algorithm efficiency. Students will learn not only
+            how to write code, but also how to think systematically
+            and design solutions before coding.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LEARNING OUTCOMES ================= -->
+
+<section class="outcomes">
+
+    <div class="section-title">
+
+        <h2 style="color:white;">
+            What You'll Learn
+        </h2>
+
+        <p style="color:#dce7ff;">
+            Skills and knowledge you will develop throughout the course.
+        </p>
+
+    </div>
+
+
+    <div class="outcome-grid">
+
+        <div class="outcome-card">
+
+            <h3>💻 Computer Fundamentals</h3>
+
+            <p>
+                Understand computer hardware, software,
+                CPU, memory, storage, operating systems,
+                and basic computer architecture.
+            </p>
+
+        </div>
+
+
+        <div class="outcome-card">
+
+            <h3>🔢 Data Representation</h3>
+
+            <p>
+                Understand binary, decimal, hexadecimal,
+                bits, bytes, and how computers represent data.
+            </p>
+
+        </div>
+
+
+        <div class="outcome-card">
+
+            <h3>🧠 Problem Solving</h3>
+
+            <p>
+                Analyze problems, break them into smaller parts,
+                and develop structured solutions using logical thinking.
+            </p>
+
+        </div>
+
+
+        <div class="outcome-card">
+
+            <h3>📋 Algorithms & Flowcharts</h3>
+
+            <p>
+                Design algorithms using pseudocode and represent
+                solutions visually using flowcharts.
+            </p>
+
+        </div>
+
+
+        <div class="outcome-card">
+
+            <h3>⌨️ Programming Fundamentals</h3>
+
+            <p>
+                Apply variables, data types, operators,
+                conditions, loops, functions, and basic programming concepts.
+            </p>
+
+        </div>
+
+
+        <div class="outcome-card">
+
+            <h3>🗂 Data Structures</h3>
+
+            <p>
+                Understand arrays, lists, strings, and basic
+                techniques for organizing and processing data.
+            </p>
+
+        </div>
+
+
+        <div class="outcome-card">
+
+            <h3>⚡ Algorithm Efficiency</h3>
+
+            <p>
+                Understand searching, sorting, algorithm efficiency,
+                and the basic idea of Big-O notation.
+            </p>
+
+        </div>
+
+
+        <div class="outcome-card">
+
+            <h3>🚀 Practical Problem Solving</h3>
+
+            <p>
+                Apply the complete process of
+                Problem → Algorithm → Flowchart → Code → Test
+                to solve programming problems.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SYLLABUS ================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>12-Week Course Outline</h2>
+
+        <p>
+            A structured journey from Computer Science fundamentals
+            to practical programming and problem solving.
+        </p>
+
+    </div>
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Week</th>
+
+                    <th>Theory & Concepts</th>
+
+                    <th>Details</th>
+
+                    <th>Hands-on Labs / Learning Outcomes</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+
+                    <td>1</td>
+
+                    <td>Introduction to Computer Science</td>
+
+                    <td>
+                        What is Computer Science?
+                        Computer Science vs IT,
+                        Software vs Hardware,
+                        and the role of Computer Science
+                        in the real world.
+                    </td>
+
+                    <td>
+                        Identify hardware and software components;
+                        explore real-world Computer Science applications.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>2</td>
+
+                    <td>How Computers Work</td>
+
+                    <td>
+                        CPU, Memory, Storage, Input/Output,
+                        Operating Systems, and basic
+                        computer architecture.
+                    </td>
+
+                    <td>
+                        Trace how a simple program is processed
+                        by a computer and understand the role
+                        of each major component.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>3</td>
+
+                    <td>Number Systems & Data Representation</td>
+
+                    <td>
+                        Binary, Decimal, Hexadecimal,
+                        Bits & Bytes, and basic data representation.
+                    </td>
+
+                    <td>
+                        Binary ↔ Decimal conversions
+                        and basic storage calculations.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>4</td>
+
+                    <td>Programming Logic & Problem Solving</td>
+
+                    <td>
+                        Problem definition, Input, Process,
+                        Output, decomposition, and logical thinking.
+                    </td>
+
+                    <td>
+                        Solve everyday and programming problems
+                        using the Input → Process → Output approach.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>5</td>
+
+                    <td>Algorithms</td>
+
+                    <td>
+                        What is an algorithm?
+                        Characteristics of algorithms,
+                        pseudocode, and step-by-step problem solving.
+                    </td>
+
+                    <td>
+                        Write algorithms for simple
+                        real-world and programming problems.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>6</td>
+
+                    <td>Flowcharts</td>
+
+                    <td>
+                        Flowchart symbols, sequence,
+                        decision, repetition, and tracing logic.
+                    </td>
+
+                    <td>
+                        Create flowcharts for problems such as
+                        ATM transactions, login systems, and grading.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>7</td>
+
+                    <td>Programming Fundamentals</td>
+
+                    <td>
+                        Variables, constants, data types,
+                        operators, expressions, and input/output.
+                    </td>
+
+                    <td>
+                        Build small programs using
+                        fundamental programming concepts.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>8</td>
+
+                    <td>Control Structures</td>
+
+                    <td>
+                        Sequence, Selection, and Iteration.
+                        if/else, switch, and loops.
+                    </td>
+
+                    <td>
+                        Even/Odd, Largest Number,
+                        FizzBuzz, counting, and other
+                        logic-based programming exercises.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>9</td>
+
+                    <td>Functions & Modular Programming</td>
+
+                    <td>
+                        Functions, parameters, return values,
+                        scope, and modular program design.
+                    </td>
+
+                    <td>
+                        Create reusable functions and divide
+                        programs into manageable modules.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>10</td>
+
+                    <td>Data Structures</td>
+
+                    <td>
+                        Arrays, Lists, Strings,
+                        and basic data organization.
+                    </td>
+
+                    <td>
+                        Search, count, organize, and manipulate
+                        collections of data.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>11</td>
+
+                    <td>Algorithms & Efficiency</td>
+
+                    <td>
+                        Searching, Sorting,
+                        Algorithm Efficiency,
+                        and introduction to Big-O notation.
+                    </td>
+
+                    <td>
+                        Practice Linear Search and simple
+                        sorting techniques and compare approaches.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>12</td>
+
+                    <td>Problem Solving & Mini Project</td>
+
+                    <td>
+                        Applying Computer Science concepts
+                        to a complete problem:
+                        Analysis → Algorithm → Flowchart
+                        → Code → Testing.
+                    </td>
+
+                    <td>
+                        Build and present a small
+                        programming project using the
+                        concepts learned throughout the course.
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FINAL PROJECT ================= -->
+
+<section class="final-project">
+
+    <div class="project-box">
+
+        <h2>
+            🚀 Final Project
+        </h2>
+
+        <p>
+            Apply the Computer Science concepts you have learned
+            by analyzing a real-world problem, designing an algorithm,
+            creating a flowchart, implementing the solution in code,
+            and testing the final program.
+        </p>
+
+        <h3>
+            Problem → Algorithm → Flowchart → Code → Test
+        </h3>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REGISTER ================= -->
+
+<section class="register">
+
+    <h2>
+        Ready to Start Learning?
+    </h2>
+
+    <p>
+        Build your Computer Science foundation
+        step by step with Zenith Code Academy.
+    </p>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe7jbBH1vQi0H-W7VnffjkoQ7ar3fEoT1bA4t3VpcXimKkBRw/viewform"
+       target="_blank"
+       class="register-btn">
+
+        Register for Computer Science Course →
+
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 Zenith Code Academy. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
+```
